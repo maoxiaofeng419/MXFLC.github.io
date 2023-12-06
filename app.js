@@ -9,6 +9,13 @@ var usersRouter = require('./routes/users');
 
 var app = express();
 
+
+
+// 配置全局变量 app.js作用域下所有文件都可以访问common中的db和RunSQL
+require(process.cwd() + '/common/sql.js');
+require(process.cwd() + '/common/utils.js');
+
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
